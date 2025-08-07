@@ -228,4 +228,183 @@ function toggleTheme() {
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
-} 
+}
+
+// Funcionalidad del botón flotante y modal
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingButton = document.getElementById('floatingButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModal = document.getElementById('closeModal');
+    const contactForm = document.getElementById('contactForm');
+    
+    // Abrir modal
+    floatingButton.addEventListener('click', function() {
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll
+    });
+    
+    // Cerrar modal
+    function closeModalFunction() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restaurar scroll
+    }
+    
+    closeModal.addEventListener('click', closeModalFunction);
+    
+    // Cerrar modal al hacer clic fuera
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModalFunction();
+        }
+    });
+    
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            closeModalFunction();
+        }
+    });
+    
+    // Función para manejar la habilitación de campos según el método de contacto
+    function handleContactMethodChange() {
+        const emailField = document.getElementById('emailField');
+        const phoneField = document.getElementById('phoneField');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const selectedMethod = document.querySelector('input[name="contactMethod"]:checked');
+        
+        // Ocultar todos los campos primero
+        emailField.style.display = 'none';
+        phoneField.style.display = 'none';
+        
+        // Limpiar y resetear campos
+        emailInput.value = '';
+        phoneInput.value = '';
+        emailInput.required = false;
+        phoneInput.required = false;
+        
+        if (selectedMethod) {
+            const method = selectedMethod.value;
+            
+            if (method === 'email') {
+                emailField.style.display = 'block';
+                emailInput.required = true;
+                // Animación suave para mostrar el campo
+                emailField.style.animation = 'slideDown 0.3s ease-out';
+            } else if (method === 'whatsapp' || method === 'call') {
+                phoneField.style.display = 'block';
+                phoneInput.required = true;
+                // Animación suave para mostrar el campo
+                phoneField.style.animation = 'slideDown 0.3s ease-out';
+            }
+        }
+    }
+    
+    // Agregar event listeners para los radio buttons
+    const contactOptions = document.querySelectorAll('input[name="contactMethod"]');
+    contactOptions.forEach(option => {
+        option.addEventListener('change', handleContactMethodChange);
+    });
+    
+    // Manejar envío del formulario
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Obtener datos del formulario
+        const formData = new FormData(contactForm);
+        const data = {
+            name: formData.get('name'),
+            business: formData.get('business'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            contactMethod: formData.get('contactMethod')
+        };
+        
+        // Validar datos básicos
+        if (!data.name || !data.business || !data.contactMethod) {
+            showNotification('Por favor, completa todos los campos obligatorios', 'error');
+            return;
+        }
+        
+        // Validar según el método de contacto
+        if (data.contactMethod === 'email') {
+            if (!data.email) {
+                showNotification('Por favor, introduce tu email', 'error');
+                return;
+            }
+            // Validar formato de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showNotification('Por favor, introduce un email válido', 'error');
+                return;
+            }
+        } else if (data.contactMethod === 'whatsapp' || data.contactMethod === 'call') {
+            if (!data.phone) {
+                showNotification('Por favor, introduce tu número de teléfono', 'error');
+                return;
+            }
+        }
+        
+        // Simular envío (aquí puedes integrar con tu backend)
+        showNotification('Enviando información...', 'info');
+        
+        // Simular delay de envío
+        setTimeout(() => {
+            const methodText = {
+                'email': 'por email',
+                'whatsapp': 'por WhatsApp',
+                'call': 'por llamada telefónica'
+            };
+            showNotification(`¡Información enviada con éxito! Te contactaremos ${methodText[data.contactMethod]} pronto.`, 'success');
+            contactForm.reset();
+            closeModalFunction();
+        }, 2000);
+    });
+    
+    // Función para mostrar notificaciones
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#1877F2'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 3000;
+                font-weight: 600;
+                max-width: 300px;
+                animation: slideInRight 0.3s ease-out;
+            ">
+                ${message}
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Remover notificación después de 4 segundos
+        setTimeout(() => {
+            notification.style.animation = 'slideOutRight 0.3s ease-out';
+            setTimeout(() => notification.remove(), 300);
+        }, 4000);
+    }
+    
+    // Añadir animaciones CSS para las notificaciones
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+}); 
