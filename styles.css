@@ -65,7 +65,7 @@ body {
 /* Contenedor principal */
 .main-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.6fr 1.4fr;
     gap: 30px;
     margin-top: 5px;
 }
@@ -97,6 +97,67 @@ body {
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 2px solid #f0f0f0;
+}
+
+/* Header del contenedor desktop */
+.desktop-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.desktop-header h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    text-align: left;
+}
+
+/* Selector de vista */
+.view-selector {
+    display: flex;
+    gap: 8px;
+    background: #f8f9fa;
+    border-radius: 25px;
+    padding: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.view-btn:hover {
+    background: rgba(24, 119, 242, 0.1);
+    color: #1877F2;
+}
+
+.view-btn.active {
+    background: #1877F2;
+    color: white;
+    box-shadow: 0 2px 8px rgba(24, 119, 242, 0.3);
+}
+
+.view-btn .icon {
+    font-size: 1rem;
+}
+
+.view-btn .text {
+    font-size: 0.85rem;
 }
 
 .container-description {
@@ -136,11 +197,11 @@ body {
 
 /* Dimensiones específicas */
 .mobile-frame {
-    height: 600px;
-    max-width: 400px;
+    height: 500px;
+    max-width: 380px;
     margin: 0 auto;
     position: relative;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .mobile-frame::before {
@@ -157,85 +218,49 @@ body {
 }
 
 .desktop-frame {
-    height: 600px;
-    min-height: 500px;
+    height: 550px;
+    min-height: 450px;
     position: relative;
 }
 
 /* Responsive design */
 @media (max-width: 1200px) {
     .main-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 0.6fr 1.4fr;
         gap: 20px;
     }
     
     .mobile-frame {
-        max-width: 350px;
-        height: 500px;
+        max-width: 320px;
+        height: 450px;
     }
     
     .desktop-frame {
         height: 500px;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 10px;
     }
     
     .header {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 10px;
+        margin-bottom: 15px;
     }
     
     .logo {
         justify-content: center;
-    }
-    
-    .logo-text {
-        font-size: 2rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-        flex: none;
-    }
-    
-    .logo-img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .mobile-container,
-    .desktop-container {
-        padding: 20px;
-    }
-    
-    .container-description {
-        font-size: 0.9rem;
-        max-width: 95%;
-    }
-    
-    .mobile-frame {
-        max-width: 300px;
-        height: 400px;
-    }
-    
-    .desktop-frame {
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        gap: 10px;
-    }
-    
-    .logo {
-        flex-direction: column;
-        gap: 10px;
     }
     
     .logo-text {
@@ -244,16 +269,96 @@ body {
     
     .subtitle {
         font-size: 0.9rem;
+        flex: none;
+    }
+    
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .mobile-container,
+    .desktop-container {
+        padding: 15px;
+    }
+    
+    .desktop-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .desktop-header h2 {
+        text-align: center;
+    }
+    
+    .view-selector {
+        gap: 4px;
+        padding: 3px;
+    }
+    
+    .view-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .view-btn .text {
+        font-size: 0.75rem;
     }
     
     .container-description {
         font-size: 0.85rem;
-        max-width: 100%;
+        max-width: 95%;
+        margin-bottom: 15px;
     }
     
     .mobile-frame {
         max-width: 280px;
         height: 350px;
+    }
+    
+    .desktop-frame {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+    
+    .header {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .logo-text {
+        font-size: 1.6rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .container-description {
+        font-size: 0.8rem;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .mobile-container,
+    .desktop-container {
+        padding: 12px;
+    }
+    
+    .mobile-frame {
+        max-width: 240px;
+        height: 300px;
     }
     
     .desktop-frame {

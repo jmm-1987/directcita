@@ -134,12 +134,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Función para manejar el selector de vista
+    function setupViewSelector() {
+        const viewButtons = document.querySelectorAll('.view-btn');
+        const desktopFrame = document.querySelector('.desktop-frame');
+        
+        viewButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                viewButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Añadir clase active al botón clickeado
+                this.classList.add('active');
+                
+                const view = this.getAttribute('data-view');
+                
+                // Cambiar el estilo del frame según la vista
+                if (view === 'mobile') {
+                    desktopFrame.style.maxWidth = '350px';
+                    desktopFrame.style.margin = '0 auto';
+                    desktopFrame.style.borderRadius = '20px';
+                    desktopFrame.style.position = 'relative';
+                } else {
+                    desktopFrame.style.maxWidth = '100%';
+                    desktopFrame.style.margin = '0';
+                    desktopFrame.style.borderRadius = '15px';
+                    desktopFrame.style.position = 'relative';
+                }
+            });
+        });
+    }
+    
     // Inicializar todas las funcionalidades
     function init() {
         addHoverEffects();
         setupIframeCommunication();
         addKeyboardShortcuts();
         addLoadingIndicators();
+        setupViewSelector();
         showStatusInfo();
         
         // Configurar URLs de ejemplo (cambiar por las URLs reales)
