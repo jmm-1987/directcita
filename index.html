@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectCita - Panel de Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="DirectCita Logo" class="logo-img">
+                <h1 class="logo-text">DirectCita</h1>
+            </div>
+            <p class="subtitle">Pruebala aquí sin compromiso</p>
+        </header>
+
+        <!-- Contenedores principales -->
+        <main class="main-content">
+            <!-- Contenedor para aplicación móvil -->
+                                      <div class="mobile-container">
+                 <h2>BarberShop App - versión movil -</h2>
+                 <p class="container-description">Aplicación móvil para que los clientes puedan reservar citas, ver servicios y gestionar sus reservas desde cualquier dispositivo móvil.</p>
+                 <div class="mobile-frame">
+                                         <iframe 
+                         src="https://modelo-barber.onrender.com" 
+                         title="Aplicación Móvil"
+                         class="mobile-iframe">
+                     </iframe>
+                </div>
+            </div>
+
+            <!-- Contenedor para panel de control PC -->
+                                      <div class="desktop-container">
+                 <h2>BarberShop Panel</h2>
+                 <p class="container-description">Panel de administración completo para gestionar citas, empleados, servicios y configuraciones del negocio desde cualquier dispositov.</p>
+                 <div class="desktop-frame">
+                                         <iframe 
+                         src="https://modelo-barber.onrender.com/panel" 
+                         title="Panel de Control"
+                         class="desktop-iframe">
+                     </iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

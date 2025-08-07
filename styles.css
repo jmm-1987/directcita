@@ -1,0 +1,312 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 20%, #e4e6eb 40%, #d8dadf 60%, #ccd0d5 80%, #1877F2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px 20px 20px;
+}
+
+/* Header y Logo */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1877F2;
+    text-shadow: 1px 1px 2px rgba(24, 119, 242, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #1877F2;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(24, 119, 242, 0.1);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+    flex: 1;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 5px;
+}
+
+/* Contenedores de iframes */
+.mobile-container,
+.desktop-container {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(24, 119, 242, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(24, 119, 242, 0.1);
+}
+
+.mobile-container:hover,
+.desktop-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(24, 119, 242, 0.25);
+    border-color: rgba(24, 119, 242, 0.2);
+}
+
+.mobile-container h2,
+.desktop-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.container-description {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Frames para iframes */
+.mobile-frame,
+.desktop-frame {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    height: 100%;
+}
+
+.mobile-iframe,
+.desktop-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Dimensiones específicas */
+.mobile-frame {
+    height: 600px;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 500px;
+}
+
+.mobile-frame::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.desktop-frame {
+    height: 600px;
+    min-height: 500px;
+    position: relative;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .mobile-frame {
+        max-width: 350px;
+        height: 500px;
+    }
+    
+    .desktop-frame {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .logo {
+        justify-content: center;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        flex: none;
+    }
+    
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .mobile-container,
+    .desktop-container {
+        padding: 20px;
+    }
+    
+    .container-description {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+    
+    .mobile-frame {
+        max-width: 300px;
+        height: 400px;
+    }
+    
+    .desktop-frame {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        gap: 10px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .container-description {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    
+    .mobile-frame {
+        max-width: 280px;
+        height: 350px;
+    }
+    
+    .desktop-frame {
+        height: 350px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-container,
+.desktop-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.desktop-container {
+    animation-delay: 0.2s;
+}
+
+/* Estados de carga */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+    font-style: italic;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+} 
