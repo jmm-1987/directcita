@@ -306,6 +306,9 @@ document.addEventListener('DOMContentLoaded', function() {
         option.addEventListener('change', handleContactMethodChange);
     });
     
+    // Inicializar EmailJS cuando el DOM esté listo
+    initEmailJS();
+    
     // Manejar envío del formulario
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -345,20 +348,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Simular envío (aquí puedes integrar con tu backend)
-        showNotification('Enviando información...', 'info');
+        // Mostrar indicador de carga
+        showNotification(EmailJSConfig.notifications.loading, 'info');
         
-        // Simular delay de envío
-        setTimeout(() => {
-            const methodText = {
-                'email': 'por email',
-                'whatsapp': 'por WhatsApp',
-                'call': 'por llamada telefónica'
-            };
-            showNotification(`¡Información enviada con éxito! Te contactaremos ${methodText[data.contactMethod]} pronto.`, 'success');
-            contactForm.reset();
-            closeModalFunction();
-        }, 2000);
+        // Enviar email usando la función configurada
+        sendContactEmail(data)
+            .then(function(response) {
+                const methodText = {
+                    'email': 'por email',
+                    'whatsapp': 'por WhatsApp',
+                    'call': 'por llamada telefónica'
+                };
+                showNotification(`¡Información enviada con éxito! Te contactaremos ${methodText[data.contactMethod]} pronto.`, 'success');
+                contactForm.reset();
+                closeModalFunction();
+            })
+            .catch(function(error) {
+                showNotification(EmailJSConfig.notifications.error, 'error');
+            });
     });
     
     // Función para mostrar notificaciones
