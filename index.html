@@ -31,15 +31,21 @@
                 <img src="logo_transparente.png" alt="DirectCita Logo" class="logo-img">
                 <h1 class="logo-text">DirectCita</h1>
             </div>
-            <p class="subtitle">Pruebala aquí sin compromiso, añade citas y mira como las controlarías en tu panel movil o de escritorio.</p>
+            <p class="subtitle">Pruebala aquí sin compromiso</p>
         </header>
+
+        <!-- Botón de Scroll Dinámico -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">¡Graba tus citas desde la vista del cliente y comprueba como llegan a tu panel de control!</div>
+            <div class="scroll-arrow">↓</div>
+        </div>
 
         <!-- Contenedores principales -->
         <main class="main-content">
             <!-- Contenedor para aplicación móvil -->
                                       <div class="mobile-container">
-                 <h2>BarberShop App - versión movil -</h2>
-                 <p class="container-description">Aplicación móvil para que los clientes puedan reservar citas, ver servicios y gestionar sus reservas desde cualquier dispositivo móvil.</p>
+                 <h2>Vista del cliente</h2>
+                 <p class="container-description">Web móvil para que los clientes puedan reservar citas, ver servicios y gestionar sus reservas desde cualquier dispositivo móvil. <strong>Sin descargas ni registros</strong></p>
                  <div class="mobile-frame">
                                          <iframe 
                          src="https://modelo-barber.onrender.com" 
@@ -53,7 +59,7 @@
             <!-- Contenedor para panel de control PC -->
                                       <div class="desktop-container">
                  <div class="desktop-header">
-                     <h2>BarberShop Panel</h2>
+                     <h2>Tu Panel de Control</h2>
                      <div class="view-selector">
                          <button class="view-btn active" data-view="desktop">
                              <span class="icon">🖥️</span>
@@ -76,183 +82,233 @@
                 </div>
             </div>
         </main>
-    </div>
 
-    <!-- Sección de características -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="features-title">Características Destacadas</h2>
-            
-            <!-- Características de la App Móvil -->
-            <div class="features-container">
-                <div class="feature-card mobile-features">
-                    <div class="feature-header">
-                        <span class="feature-icon">📱</span>
-                        <h3>App Móvil - BarberShop</h3>
+        <!-- Sección de características -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="features-title">Características Destacadas</h2>
+                
+                <!-- Características de la App Móvil -->
+                <div class="features-container">
+                    <div class="feature-card mobile-features">
+                        <div class="feature-header">
+                            <span class="feature-icon">📱</span>
+                            <h3>App Móvil - BarberShop</h3>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="check-icon">✓</span> Reserva de citas en tiempo real</li>
+                            <li><span class="check-icon">✓</span> Catálogo de servicios con precios</li>
+                            <li><span class="check-icon">✓</span> Perfil de usuario personalizable</li>
+                            <li><span class="check-icon">✓</span> Historial de citas y pagos</li>
+                            <li><span class="check-icon">✓</span> Notificaciones push automáticas</li>
+                            <li><span class="check-icon">✓</span> Sistema de valoraciones y reseñas</li>
+                            <li><span class="check-icon">✓</span> Integración con calendario personal</li>
+                            <li><span class="check-icon">✓</span> Modo offline para consultas</li>
+                        </ul>
                     </div>
-                    <ul class="feature-list">
-                        <li><span class="check-icon">✓</span> Reserva de citas en tiempo real</li>
-                        <li><span class="check-icon">✓</span> Catálogo de servicios con precios</li>
-                        <li><span class="check-icon">✓</span> Perfil de usuario personalizable</li>
-                        <li><span class="check-icon">✓</span> Historial de citas y pagos</li>
-                        <li><span class="check-icon">✓</span> Notificaciones push automáticas</li>
-                        <li><span class="check-icon">✓</span> Sistema de valoraciones y reseñas</li>
-                        <li><span class="check-icon">✓</span> Integración con calendario personal</li>
-                        <li><span class="check-icon">✓</span> Modo offline para consultas</li>
-                    </ul>
+
+                    <!-- Características del Panel de Control -->
+                    <div class="feature-card desktop-features">
+                        <div class="feature-header">
+                            <span class="feature-icon">🖥️</span>
+                            <h3>Panel de Control - BarberShop</h3>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="check-icon">✓</span> Dashboard con métricas en tiempo real</li>
+                            <li><span class="check-icon">✓</span> Gestión completa de citas y reservas</li>
+                            <li><span class="check-icon">✓</span> Administración de empleados y horarios</li>
+                            <li><span class="check-icon">✓</span> Control de inventario y productos</li>
+                            <li><span class="check-icon">✓</span> Reportes financieros detallados</li>
+                            <li><span class="check-icon">✓</span> Sistema de clientes y base de datos</li>
+                            <li><span class="check-icon">✓</span> Configuración de servicios y precios</li>
+                            <li><span class="check-icon">✓</span> Integración con sistemas de pago</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Características del Panel de Control -->
-                <div class="feature-card desktop-features">
-                    <div class="feature-header">
-                        <span class="feature-icon">🖥️</span>
-                        <h3>Panel de Control - BarberShop</h3>
+                <!-- Características generales del sistema -->
+                <div class="general-features">
+                    <h3>Características del Sistema DirectCita</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-icon">🔒</span>
+                            <h4>Seguridad</h4>
+                            <p>Datos encriptados y respaldos automáticos</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <h4>Analytics</h4>
+                            <p>Métricas detalladas del negocio</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🌐</span>
+                            <h4>Multiplataforma</h4>
+                            <p>Funciona en web, iOS y Android</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <h4>Rendimiento</h4>
+                            <p>Respuesta rápida y sincronización en tiempo real</p>
+                        </div>
                     </div>
-                    <ul class="feature-list">
-                        <li><span class="check-icon">✓</span> Dashboard con métricas en tiempo real</li>
-                        <li><span class="check-icon">✓</span> Gestión completa de citas y reservas</li>
-                        <li><span class="check-icon">✓</span> Administración de empleados y horarios</li>
-                        <li><span class="check-icon">✓</span> Control de inventario y productos</li>
-                        <li><span class="check-icon">✓</span> Reportes financieros detallados</li>
-                        <li><span class="check-icon">✓</span> Sistema de clientes y base de datos</li>
-                        <li><span class="check-icon">✓</span> Configuración de servicios y precios</li>
-                        <li><span class="check-icon">✓</span> Integración con sistemas de pago</li>
-                    </ul>
                 </div>
             </div>
+        </section>
 
-            <!-- Características generales del sistema -->
-            <div class="general-features">
-                <h3>Características del Sistema DirectCita</h3>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <span class="feature-icon">🔒</span>
-                        <h4>Seguridad</h4>
-                        <p>Datos encriptados y respaldos automáticos</p>
+        <!-- Sección de Precios Destacada -->
+        <section class="pricing-section">
+            <div class="pricing-container">
+                <h2 class="pricing-title">💎 Precios Especiales</h2>
+                <div class="pricing-cards">
+                    <div class="pricing-card monthly">
+                        <div class="pricing-header">
+                            <h3>Plan Mensual</h3>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount">25</span>
+                                <span class="period">/mes</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Aplicación móvil completa</li>
+                            <li>✓ Panel de control web</li>
+                            <li>✓ Soporte técnico incluido</li>
+                            <li>✓ Actualizaciones automáticas</li>
+                        </ul>
+                        <div class="pricing-action">
+                            <button class="pricing-btn" onclick="document.getElementById('floatingButton').click()">¡Quiero empezar!</button>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">📊</span>
-                        <h4>Analytics</h4>
-                        <p>Métricas detalladas del negocio</p>
+                    
+                    <div class="pricing-card annual featured">
+                        <div class="pricing-badge">¡Mejor Precio!</div>
+                        <div class="pricing-header">
+                            <h3>Plan Anual</h3>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount">20</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <div class="savings">Ahorras 60€ al año</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Aplicación móvil completa</li>
+                            <li>✓ Panel de control web</li>
+                            <li>✓ Soporte técnico prioritario</li>
+                            <li>✓ Actualizaciones automáticas</li>
+                            <li>✓ Funciones premium incluidas</li>
+                        </ul>
+                        <div class="pricing-action">
+                            <button class="pricing-btn featured" onclick="document.getElementById('floatingButton').click()">¡Me interesa!</button>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🌐</span>
-                        <h4>Multiplataforma</h4>
-                        <p>Funciona en web, iOS y Android</p>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">⚡</span>
-                        <h4>Rendimiento</h4>
-                        <p>Respuesta rápida y sincronización en tiempo real</p>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarjeta de contacto -->
+        <div class="contact-card">
+            <div class="contact-profile">
+                <img src="fotoo.png" alt="Jonatan Murillo" class="profile-image">
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon email-icon">📧</span>
+                    <a href="mailto:jomma.tech@gmail.com" class="contact-link">jomma.tech@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon phone-icon">📞</span>
+                    <span class="contact-text">+34 619639616</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon whatsapp-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                        </svg>
+                    </span>
+                    <span class="contact-text">WhatsApp</span>
+                </div>
+            </div>
+            <div class="contact-details">
+                <h3 class="contact-name">Jonatan Murillo</h3>
+                <div class="tech-tag">
+                    <span class="code-icon">&lt;/&gt;</span>
+                    <span class="tag-text">tech_studio</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Tarjeta de contacto -->
-    <div class="contact-card">
-        <div class="contact-profile">
-            <img src="fotoo.png" alt="Jonatan Murillo" class="profile-image">
         </div>
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="contact-icon email-icon">📧</span>
-                <a href="mailto:jomma.tech@gmail.com" class="contact-link">jomma.tech@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <span class="contact-icon phone-icon">📞</span>
-                <span class="contact-text">+34 619639616</span>
-            </div>
-            <div class="contact-item">
-                <span class="contact-icon whatsapp-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                    </svg>
-                </span>
-                <span class="contact-text">WhatsApp</span>
-            </div>
+
+        <!-- Botón flotante -->
+        <div class="floating-button" id="floatingButton">
+            <span class="button-text">Quiero más información</span>
+            <span class="button-icon">💬</span>
         </div>
-        <div class="contact-details">
-            <h3 class="contact-name">Jonatan Murillo</h3>
-            <div class="tech-tag">
-                <span class="code-icon">&lt;/&gt;</span>
-                <span class="tag-text">tech_studio</span>
-            </div>
-        </div>
-    </div>
 
-    </div>
-
-    <!-- Botón flotante -->
-    <div class="floating-button" id="floatingButton">
-        <span class="button-text">Quiero más información</span>
-        <span class="button-icon">💬</span>
-    </div>
-
-    <!-- Modal del formulario -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>¡Obtén más información!</h3>
-                <button class="close-button" id="closeModal">×</button>
-            </div>
-            <form class="contact-form" id="contactForm">
-                <p class="form-description">Déjanos tus datos y recibirás toda la información necesaria para conseguir tu aplicación.</p>
-                
-                <div class="form-group">
-                    <label for="name">Nombre completo *</label>
-                    <input type="text" id="name" name="name" required>
+        <!-- Modal del formulario -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>¡Obtén más información!</h3>
+                    <button class="close-button" id="closeModal">×</button>
                 </div>
-                <div class="form-group">
-                    <label for="business">Nombre de tu negocio *</label>
-                    <input type="text" id="business" name="business" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>¿Cómo prefieres que te contactemos? *</label>
-                    <div class="contact-options">
-                        <label class="contact-option">
-                            <input type="radio" name="contactMethod" value="email" required>
-                            <span class="option-icon">📧</span>
-                            <span class="option-text">Email</span>
-                        </label>
-                                                 <label class="contact-option">
-                             <input type="radio" name="contactMethod" value="whatsapp" required>
-                             <span class="option-icon">
-                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                                 </svg>
-                             </span>
-                             <span class="option-text">WhatsApp</span>
-                         </label>
-                        <label class="contact-option">
-                            <input type="radio" name="contactMethod" value="call" required>
-                            <span class="option-icon">📞</span>
-                            <span class="option-text">Llamada</span>
-                        </label>
+                <form class="contact-form" id="contactForm">
+                    <p class="form-description">Déjanos tus datos y recibirás toda la información necesaria para conseguir tu aplicación.</p>
+                    
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                </div>
-                
-                <div class="form-group" id="emailField" style="display: none;">
-                    <label for="email">Correo electrónico *</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                
-                <div class="form-group" id="phoneField" style="display: none;">
-                    <label for="phone">Teléfono *</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="submit-button">Enviar información</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="business">Nombre de tu negocio *</label>
+                        <input type="text" id="business" name="business" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>¿Cómo prefieres que te contactemos? *</label>
+                        <div class="contact-options">
+                            <label class="contact-option">
+                                <input type="radio" name="contactMethod" value="email" required>
+                                <span class="option-icon">📧</span>
+                                <span class="option-text">Email</span>
+                            </label>
+                                                     <label class="contact-option">
+                                 <input type="radio" name="contactMethod" value="whatsapp" required>
+                                 <span class="option-icon">
+                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                     </svg>
+                                 </span>
+                                 <span class="option-text">WhatsApp</span>
+                             </label>
+                            <label class="contact-option">
+                                <input type="radio" name="contactMethod" value="call" required>
+                                <span class="option-icon">📞</span>
+                                <span class="option-text">Llamada</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="emailField" style="display: none;">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group" id="phoneField" style="display: none;">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Enviar información</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script src="config.js"></script>
-    <script src="emailjs-config.js"></script>
-    <script src="script.js"></script>
-</body>
-</html> 
+        <script src="config.js"></script>
+        <script src="emailjs-config.js"></script>
+        <script src="script.js"></script>
+    </body>
+    </html> 

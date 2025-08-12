@@ -15,8 +15,8 @@ const DirectCitaConfig = {
     
     // Configuración de títulos de contenedores
     titles: {
-        mobile: 'BarberShop App',
-        desktop: 'BarberShop Panel'
+        mobile: 'Vista del Cliente',
+        desktop: 'Tu Panel de Control'
     },
     
     // Configuración de colores
